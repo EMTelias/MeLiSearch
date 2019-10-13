@@ -6,13 +6,6 @@ import ProductDescription from "./ProductDescription";
 import {API_ENDPOINT} from "../../config/config"
 import "../../styles/productDetails.css"
 
-const layoutStyle =
-    {
-        margin: "auto",
-        maxWidth: "1220px",
-
-    };
-
 export class Product extends React.Component {
 
     constructor(props) {
@@ -53,11 +46,11 @@ export class Product extends React.Component {
             return <p>{error.message}</p>;
     }
     else if (isFetching){
-        return <div style={layoutStyle}><p> Loading...</p> </div>
+        return <div><p> Loading...</p> </div>
 
     }
         return (
-            <div style={layoutStyle}>
+            <div>
                 <ProductCategories productCategories={"Nuevo > Iphone > Lie > Not an iphone"}/>
                 <Container className={"product-container"}>
                     <div className={"details-container"}>

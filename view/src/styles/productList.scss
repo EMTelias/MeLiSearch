@@ -1,0 +1,29 @@
+.product-row{
+  flex-direction: row;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+ul{
+  padding: 16px!important;
+
+}
+.product-column{
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  text-align: left;
+
+  img {}
+}
+.product-left{
+  width: 25%;
+  max-width: 100px;
+  min-width: 10px;
+}
+.product-center{
+  width:50%;
+}
+.product-right{
+  width:25%;
+}

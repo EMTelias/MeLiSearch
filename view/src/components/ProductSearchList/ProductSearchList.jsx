@@ -4,16 +4,13 @@ import ProductItem from "./ProductItem";
 import ProductCategories from "../Product/ProductCategories";
 import queryString from "query-string"
 import {API_ENDPOINT} from "../../config/config";
-import {shallowCompare} from "../../utils/utils"
+import "../../styles/productList.css";
+
 import {Link} from "react-router-dom";
 const style = {
     background: "#fff",
 };
 
-const layoutStyle = {
-        margin: "auto",
-        maxWidth: "1220px",
-};
 
 export class ProductSearchList extends React.Component {
 
@@ -69,7 +66,7 @@ export class ProductSearchList extends React.Component {
         return (
             <div style={this.layoutStyle}>
                 <ProductCategories productDirection={"Nuevo > Iphone > Lie > Not an iphone"}/>
-                <Container style={this.style}>
+                <Container className={"product-container"}>
                     {items.map( (product) => {
                         const item = product.item;
                         return <ul key={item.id}>

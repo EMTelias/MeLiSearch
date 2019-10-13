@@ -1,5 +1,4 @@
 import React from 'react';
-import { Row, Col} from "react-bootstrap";
 
 const style = {
     position: "relative",
@@ -12,18 +11,18 @@ const imgStyle = {
 
 function ProductItem({productPrice, productName, productSeller, productImg}) {
    return <div style={style}>
-                <Row>
-                    <Col>
+                <div className={"product-row"}>
+                    <div className={"product-column product-left"}>
                         <img style={ imgStyle } src={productImg}/>
-                    </Col>
-                    <Col>
+                    </div>
+                    <div className={"product-column product-center"}>
                         <h4>{productPrice}</h4>
                         <h6>{productName}</h6>
-                    </Col>
-                    <Col>
+                    </div>
+                    <div className={"product-column product-right"}>
                         <p>{productSeller}</p>
-                    </Col>
-                </Row>
+                    </div>
+                </div>
          </div>
 }
 

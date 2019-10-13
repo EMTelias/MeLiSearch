@@ -1,7 +1,7 @@
 import React from 'react';
 
 const style = {
-    color: "#999",
+    color: "#git ",
 };
 
 function ProductDescription({ itemPicture, productDescription }) {

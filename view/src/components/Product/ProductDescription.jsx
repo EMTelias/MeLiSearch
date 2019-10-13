@@ -1,8 +1,5 @@
 import React from 'react';
 
-const style = {
-    color: "#git ",
-};
 
 function ProductDescription({ itemPicture, productDescription }) {
      return  <div className={"details-left"}>
@@ -10,7 +7,7 @@ function ProductDescription({ itemPicture, productDescription }) {
                      <img src={itemPicture} alt={"img"}/>
                  </div>
                 <h2> Descripción del producto </h2>
-                <p style={style}>{ productDescription }</p>
+                <p >{ productDescription }</p>
             </div>
 }
 

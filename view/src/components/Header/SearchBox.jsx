@@ -42,19 +42,18 @@ export class SearchBox extends React.Component {
         }
 
         return (
-            <Container >
-                <Form onSubmit={this.onSubmit}>
-                    <Row>
+            <div>
+                <form onSubmit={this.onSubmit}>
+                    <div className={"search-box"}>
                         <input
-                            style={inputStyle}
                             value={this.state.searchQuery}
                             type="text"
                             onChange={this.changeHandler}
-                            placeholder="Nunca dejes de buscar"/>
+                            placeholde  r="Nunca dejes de buscar"/>
                         <button style={buttonStyle} type={'submit'}/>
-                    </Row>
-                </Form>
-            </Container>
+                    </div>
+                </form>
+            </div>
         );
     }
 };

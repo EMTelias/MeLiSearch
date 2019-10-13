@@ -2,10 +2,10 @@
   background: white;
   max-width: 1200px;
   margin: 0 auto;
+  margin-bottom: 20px;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
   border-radius: 4px;
-  border-top: 0;
-}
+  border-top: 0; }
 
 .details-container {
   min-height: 100px;
@@ -13,49 +13,55 @@
   font-size: 15px !important;
   min-width: 0;
   text-align: left;
-  padding-left: 36px;
-}
-.details-container .details-left {
-  max-width: 700px;
-}
-.details-container .details-left .details-img {
-  text-align-last: center;
-  padding: 36px;
-}
-.details-container .details-info {
-  display: flex;
-  width: 30%;
-  position: relative;
-  justify-content: left;
-  flex-direction: column;
-  padding: 32px;
-  line-height: 1.35;
-}
-.details-container .details-info .item-title {
-  font-size: 26px;
-  font-weight: 600;
-}
-.details-container .details-info .item-price {
-  margin: 18px 0;
-  line-height: 0;
-  display: block;
-  font-size: 44px;
-  font-weight: 300;
-}
-.details-container .details-info .item-state {
-  font-size: 14px;
-  color: #666;
-  line-height: 1;
-  margin-bottom: 16px;
-  font-weight: 300;
-}
-.details-container .details-info button {
-  background: #3483fa;
-  border: 1px solid;
-  color: #fff;
-  border-radius: 4px;
-  margin-top: 36px;
-  line-height: 36px;
-}
+  padding-left: 36px; }
+  .details-container .details-left {
+    max-width: 700px;
+    margin: auto;
+    padding-bottom: 20px; }
+    .details-container .details-left h2 {
+      margin-bottom: 36px; }
+    .details-container .details-left .details-img {
+      padding: 36px;
+      min-height: 450px;
+      max-height: 600px;
+      display: flex;
+      margin: auto;
+      height: 80%;
+      width: 80%; }
+      .details-container .details-left .details-img img {
+        margin: auto;
+        /* Magic! */
+        max-width: 100%;
+        max-height: 100%; }
+  .details-container .details-info {
+    display: flex;
+    width: 30%;
+    position: relative;
+    justify-content: left;
+    flex-direction: column;
+    padding: 32px;
+    line-height: 1.35; }
+    .details-container .details-info .item-title {
+      font-size: 26px;
+      font-weight: 600; }
+    .details-container .details-info .item-price {
+      margin: 18px 0;
+      line-height: 0;
+      display: block;
+      font-size: 44px;
+      font-weight: 300; }
+    .details-container .details-info .item-state {
+      font-size: 14px;
+      color: #666;
+      line-height: 1;
+      margin-bottom: 16px;
+      font-weight: 300; }
+    .details-container .details-info button {
+      background: #3483fa;
+      border: 1px solid;
+      color: #fff;
+      border-radius: 4px;
+      margin-top: 36px;
+      line-height: 36px; }
 
 /*# sourceMappingURL=productDetails.css.map */

@@ -2,10 +2,10 @@ import React from 'react';
 import {Container} from "react-bootstrap";
 import ProductDetails from "./ProductDetails";
 import ProductDescription from "./ProductDescription";
-import {API_ENDPOINT} from "../../config/config"
-import "../../styles/product/productDetails.css"
+import {API_ENDPOINT} from "../../../config/config"
 import Breadcrumb from "../Breadcrumb/Breadcrumb";
 import NotFound from "../Error/NotFound";
+import "../../../styles/product/productDetails.css";
 
 export class Product extends React.Component {
 

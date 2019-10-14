@@ -2,8 +2,8 @@ import React from 'react';
 import {Container, Row} from "react-bootstrap";
 import ProductItem from "./ProductItem";
 import queryString from "query-string"
-import {API_ENDPOINT} from "../../config/config";
-import "../../styles/searchList/productList.css";
+import {API_ENDPOINT} from "../../../config/config";
+import "../../../styles/searchList/productList.css";
 
 import {Link} from "react-router-dom";
 import Breadcrumb from "../Breadcrumb/Breadcrumb";
@@ -66,10 +66,9 @@ export class ProductSearchList extends React.Component {
                 <Breadcrumb productCategoriesArray={categories}/>
                 <Container className={"product-container"}>
                     {items.map( (product) => {
-                        const item = product;
-                        return <ul key={item.id}>
-                                    <Link to={`/items/${item.id}`}>
-                                        <ProductItem key={item.id} productPrice={item.price.amount} productName={item.title} productSeller={item.state} productImg={item.picture}/>
+                        return <ul key={product.id}>
+                                    <Link to={`/items/${product.id}`}>
+                                        <ProductItem key={product.id} productPrice={product.price.amount} productName={product.title} productSeller={product.state} productImg={product.picture}/>
                                     </Link>
                                </ul>
                     })}

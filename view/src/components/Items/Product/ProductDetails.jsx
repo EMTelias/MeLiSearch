@@ -1,5 +1,5 @@
 import React from 'react';
-import "../../styles/product/productDetails.css";
+import "../../../styles/product/productDetails.css";
 import PriceItem from "./PriceItem";
 
 

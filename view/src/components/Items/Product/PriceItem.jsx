@@ -1,6 +1,6 @@
 import React from 'react';
-import "../../styles/product/priceItem.css";
-import Helper from "../../helpers/helpers";
+import Helper from "../../../helpers/helpers";
+import "../../../styles/product/priceItem.css";
 
 function PriceItem({productAmount, productDecimals}) {
     return <fieldset className="item-price ">

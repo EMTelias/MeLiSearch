@@ -1,6 +1,6 @@
 import React from 'react';
-import notFoundSvg from '../../img/notFound.svg'
-import "../../styles/error/notFound.css";
+import notFoundSvg from '../../../img/notFound.svg'
+import "../../../styles/error/notFound.css";
 
 function NotFound({ notFoundMessage }) {
     return <div className={"not-found-container"}>

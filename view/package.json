@@ -40,7 +40,7 @@
     ]
   },
   "devDependencies": {
-    "concurrently": "^4.1.2"
+    "react-scripts": "3.2.0"
   },
   "proxy": "http://localhost:5000"
 }

@@ -5,6 +5,7 @@ import ProductDescription from "./ProductDescription";
 import {API_ENDPOINT} from "../../config/config"
 import "../../styles/product/productDetails.css"
 import Breadcrumb from "../Breadcrumb/Breadcrumb";
+import NotFound from "../Error/NotFound";
 
 export class Product extends React.Component {
 
@@ -25,10 +26,10 @@ export class Product extends React.Component {
             .then(response => {
                 this.setState({
                     isFetching: false,
-                    error: response.error,
                     item: response
                 });
-            });
+            })
+            .catch((error) => this.setState({ error : error }));
     }
 
     componentDidMount() {
@@ -46,10 +47,10 @@ export class Product extends React.Component {
         const {isFetching, item, error} = this.state;
         const product = item.item;
         if (error) {
-                return <p>{"ERROR PAGE"}</p>;
+                return <NotFound notFoundMessage={"No se encuentra el producto ingresado"}/>
         }
         else if (isFetching){
-            return <div><p> Loading...</p> </div>
+            return null;
         }
         return (
                 <div>
@@ -57,7 +58,7 @@ export class Product extends React.Component {
                     <Container className={"product-container"}>
                         <div className={"details-container"}>
                             <ProductDescription itemPicture={product.picture} productDescription={product.description} />
-                            <ProductDetails itemState={product.condition} itemsSold={product.sold_quantity} itemName={product.title} itemPrice={product.price.amount} />
+                            <ProductDetails itemState={product.condition} itemsSold={product.sold_quantity} itemName={product.title} itemPrice={product.price} />
                         </div>
                     </Container>
                 </div>

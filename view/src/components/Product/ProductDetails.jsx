@@ -1,6 +1,6 @@
 import React from 'react';
-import { Row, Col,Button} from "react-bootstrap";
 import "../../styles/product/productDetails.css";
+import PriceItem from "./PriceItem";
 
 
 function ProductDetails({itemState, itemsSold, itemName, itemPrice}) {
@@ -9,7 +9,7 @@ function ProductDetails({itemState, itemsSold, itemName, itemPrice}) {
                 <header>
                     <h1 className={"item-title"}>{itemName}</h1>
                 </header>
-                <span className={"item-price"}>$ {new Intl.NumberFormat("de-DE").format(itemPrice)}</span>
+                <PriceItem productAmount={itemPrice.amount} productDecimals={ itemPrice.decimals }/>
                 <button variant="primary">Comprar</button>
             </section>
 }

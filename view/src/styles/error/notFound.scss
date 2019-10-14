@@ -1,0 +1,23 @@
+.not-found-container{
+  max-width: 1200px;
+  min-height: 204px;
+  border-radius: 4px;
+  background-color: #fff;
+  margin: 48px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  padding: 40px;
+  box-sizing: border-box;
+
+  .search-icon{
+    margin-right: 35px;
+  }
+
+  h3 {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.08;
+  }
+}

@@ -6,7 +6,9 @@
 }
 ul{
   padding: 16px!important;
-
+  :hover{
+    text-decoration: none;
+  }
 }
 .product-column{
   flex-direction: column;
@@ -14,15 +16,19 @@ ul{
   justify-content: center;
   text-align: left;
   color: black;
-  img {}
 }
+
 .product-left{
   width: 25%;
-  max-width: 100px;
-  min-width: 10px;
+  img {
+    height: 200px;
+  }
 }
 .product-center{
+  padding-left: 8px;
   width:50%;
+  margin-top: 36px;
+  align-self: baseline;
 }
 .product-right{
   width:25%;

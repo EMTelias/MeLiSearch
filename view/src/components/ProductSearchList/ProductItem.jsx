@@ -1,23 +1,17 @@
 import React from 'react';
+import PriceItem from "../Product/PriceItem";
+import Helper from "../../helpers/helpers";
 
-const style = {
-    position: "relative",
-    height: "56px!important",
 
-};
-const imgStyle = {
-    maxHeight: "60px",
-};
-
-function ProductItem({productPrice, productName, productSeller, productImg}) {
-   return <div style={style}>
+function ProductItem({productPrice, productName, productImg,  productSeller}) {
+   return <div >
                 <div className={"product-row"}>
                     <div className={"product-column product-left"}>
-                        <img style={ imgStyle } src={productImg}/>
+                        <img src={productImg}/>
                     </div>
                     <div className={"product-column product-center"}>
-                        <h4>$ {new Intl.NumberFormat("de-DE").format(productPrice)}</h4>
-                        <h6>{productName}</h6>
+                        <h4>$ {Helper.formatPrice(productPrice)}</h4>
+                        <h5>{productName}</h5>
                     </div>
                     <div className={"product-column product-right"}>
                         <p>{productSeller}</p>

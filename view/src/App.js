@@ -7,7 +7,7 @@ import { Switch} from "react-router";
 import {BrowserRouter as Router, NavLink, Route} from 'react-router-dom'
 
 import {Product} from "./components/Product/Product";
-import {SearchBar} from "./components/Header/SearchBar";
+import {SearchBar} from "./components/SearchBar/SearchBar";
 
 function App() {
 

@@ -15,7 +15,7 @@ class MeLiClient {
 
         return rp(options)
             .then((responseData) => JSON.parse(responseData))
-            .catch((error) => {err: error});
+            .catch((error) => error);
     }
 
     getProductDescription(itemId){
@@ -26,7 +26,7 @@ class MeLiClient {
 
         return rp(options)
             .then((responseData) => JSON.parse(responseData))
-            .catch((error) => {err: error});;
+            .catch((error) => error );
     }
 
     getProductCategories(categoryId){

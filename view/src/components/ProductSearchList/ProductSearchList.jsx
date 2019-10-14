@@ -7,6 +7,7 @@ import "../../styles/searchList/productList.css";
 
 import {Link} from "react-router-dom";
 import Breadcrumb from "../Breadcrumb/Breadcrumb";
+import NotFound from "../Error/NotFound";
 
 export class ProductSearchList extends React.Component {
 
@@ -31,9 +32,9 @@ export class ProductSearchList extends React.Component {
                     categories: response.categories,
                     error: response.error
                 });
-            });
+            })
+            .catch((error) => this.setState({ error : error }));;
     }
-
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         if (prevProps.location.search !== this.props.location.search ){
@@ -53,12 +54,11 @@ export class ProductSearchList extends React.Component {
 
     render() {
         const {isFetching, items, error, categories} = this.state;
-        console.log(error);
         if (error) {
-            return <p>{"ERROR PAGE"}</p>;
+            return <NotFound notFoundMessage={"No hay publicaciones que coincidan con tu búsqueda."}/>
         }
         else if (isFetching){
-            return <div ><p> Loading...</p> </div>
+            return null;
         }
 
         return (
@@ -69,7 +69,7 @@ export class ProductSearchList extends React.Component {
                         const item = product;
                         return <ul key={item.id}>
                                     <Link to={`/items/${item.id}`}>
-                                        <ProductItem key={item.id} productPrice={item.price.amount} productName={item.title} productSeller={item.condition} productImg={item.picture}/>
+                                        <ProductItem key={item.id} productPrice={item.price.amount} productName={item.title} productSeller={item.state} productImg={item.picture}/>
                                     </Link>
                                </ul>
                     })}

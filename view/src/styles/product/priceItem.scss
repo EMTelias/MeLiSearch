@@ -1,0 +1,31 @@
+.item-price {
+  display: block;
+  margin-bottom: 25px;
+  font-size: 44px;
+  font-weight: 300;
+}
+
+.price-tag * {
+  float: left;
+  overflow: visible;
+  display: inline-block;
+  vertical-align: text-bottom;
+  line-height: 1em;
+}
+
+.short-description .price-tag .price-tag-symbol {
+  margin-right: .2em!important;
+}
+
+.item-price .price-tag-cents {
+  font-size: 20px;
+  line-height: 1.8;
+  margin-left: .05em;
+  position: relative;
+  top: -3px;
+}
+
+.price-tag-decimal-separator {
+  position: absolute;
+  font-size: 0;
+}

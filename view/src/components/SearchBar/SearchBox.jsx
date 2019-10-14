@@ -28,8 +28,9 @@ export class SearchBox extends React.Component {
     render() {
         const redirectToSearch = this.state.redirectToSearch;
         if (redirectToSearch) {
-            this.setState({redirectToSearch : false}); // prevents Searchbox to stop rendering
-            return <Redirect  to={`/items?search=${this.state.searchQuery}`} />
+            const searchQuery = this.state.searchQuery;
+            this.setState({redirectToSearch : false, searchQuery: ""}); // prevents Searchbox to stop rendering an clean searchBox
+            return <Redirect  to={`/items?search=${searchQuery}`} />
         }
 
         return (

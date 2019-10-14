@@ -1,0 +1,25 @@
+{
+  "name": "meli-search",
+  "version": "1.0.0",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "cd api && npm run server",
+    "start": "cd view && npm run start",
+    "dev": "concurrently \"npm run server\" \"npm run start\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EMTelias/MeLiSearch.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EMTelias/MeLiSearch/issues"
+  },
+  "homepage": "https://github.com/EMTelias/MeLiSearch#readme",
+  "dependencies": {
+    "concurrently": "^5.0.0"
+  }
+}

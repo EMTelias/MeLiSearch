@@ -1,5 +1,5 @@
 {
-  "name": "meli-search",
+  "name": "meli-view",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -22,7 +22,7 @@
     "build": "node_modules/.bin/react-scripts build",
     "test": "node_modules/.bin/react-scripts test",
     "eject": "node_modules/.bin/react-scripts eject",
-    "dev": "node_modules/.bin/concurrently \\\"npm run server\\\" \\\"npm run start\\\""
+    "heroku-postbuild": "npm install && npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"

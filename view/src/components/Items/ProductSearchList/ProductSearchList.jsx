@@ -3,11 +3,10 @@ import {Container, Row} from "react-bootstrap";
 import ProductItem from "./ProductItem";
 import queryString from "query-string"
 import {API_ENDPOINT} from "../../../config/config";
-import "../../../styles/searchList/productList.css";
-
 import {Link} from "react-router-dom";
 import Breadcrumb from "../Breadcrumb/Breadcrumb";
 import NotFound from "../Error/NotFound";
+import "../../../styles/searchList/productList.css";import "../../../styles/searchList/productList.css";
 
 export class ProductSearchList extends React.Component {
 
@@ -26,6 +25,8 @@ export class ProductSearchList extends React.Component {
                 return res.json();
             })
             .then(response => {
+                console.log(response);
+
                 this.setState({
                     isFetching: false,
                     items: response.items,

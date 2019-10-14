@@ -1,7 +1,7 @@
 const express = require('express');
-const config = require('../config/config');
 const MeLiClient = require('../client/meliClient');
 const helper = require('../helpers/helpers');
+const config = require('../config/config');
 const router = express.Router();
 
 router.get('/:itemId', async (req, res) => {
@@ -65,7 +65,7 @@ router.get('/', async (req, res) => {
     try {
         const categoryFilter = productsFromSearch.filters.find((item) => item.id === "category");
         let mainCategoriesFromSearch = [];
-        if (categoryFilter.values.length > 0) {
+        if ( categoryFilter && categoryFilter.values && categoryFilter.values.length > 0) {
             mainCategoriesFromSearch = helper.getCategoriesPathFromRootArray(categoryFilter.values[0]);
         }
 

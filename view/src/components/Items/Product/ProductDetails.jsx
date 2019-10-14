@@ -5,7 +5,7 @@ import PriceItem from "./PriceItem";
 
 function ProductDetails({itemState, itemsSold, itemName, itemPrice}) {
     return <section className={"details-info"}>
-                <div className={"item-state"}>{` ${itemState} : ${itemsSold} vendidos `}</div>
+                <div className={"item-state"}>{` ${itemState === "new" ? "Nuevo" : "Usado" } : ${itemsSold} vendidos `}</div>
                 <header>
                     <h1 className={"item-title"}>{itemName}</h1>
                 </header>

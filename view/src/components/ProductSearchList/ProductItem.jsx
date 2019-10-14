@@ -16,7 +16,7 @@ function ProductItem({productPrice, productName, productSeller, productImg}) {
                         <img style={ imgStyle } src={productImg}/>
                     </div>
                     <div className={"product-column product-center"}>
-                        <h4>{productPrice}</h4>
+                        <h4>$ {new Intl.NumberFormat("de-DE").format(productPrice)}</h4>
                         <h6>{productName}</h6>
                     </div>
                     <div className={"product-column product-right"}>

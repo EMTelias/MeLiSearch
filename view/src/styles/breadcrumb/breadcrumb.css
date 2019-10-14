@@ -1,0 +1,17 @@
+.breadcrumb-bar {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb-bar {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 0 !important;
+}
+.breadcrumb-bar li {
+  padding-right: 5px;
+  color: #999;
+}
+
+/*# sourceMappingURL=breadcrumb.css.map */

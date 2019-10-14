@@ -1,6 +1,6 @@
 import React from 'react';
 import { Row, Col,Button} from "react-bootstrap";
-import "../../styles/productDetails.css";
+import "../../styles/product/productDetails.css";
 
 
 function ProductDetails({itemState, itemsSold, itemName, itemPrice}) {

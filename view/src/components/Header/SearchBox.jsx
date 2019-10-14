@@ -1,16 +1,7 @@
 import React from 'react';
-import Form  from 'react-bootstrap/Form';
-import Container  from 'react-bootstrap/Container';
-import Row from "react-bootstrap/Row";
 import {Redirect} from "react-router";
+import searchIcon from '../../img/search.ico' // relative path to image
 
-const buttonStyle = {
-    width: "30px",
-}
-
-const inputStyle = {
-    width: "600px",
-}
 export class SearchBox extends React.Component {
 
     constructor(props) {
@@ -42,16 +33,19 @@ export class SearchBox extends React.Component {
         }
 
         return (
-            <div>
+            <div className={"search-box"}>
                 <form onSubmit={this.onSubmit}>
-                    <div className={"search-box"}>
-                        <input
-                            value={this.state.searchQuery}
-                            type="text"
-                            onChange={this.changeHandler}
-                            placeholde  r="Nunca dejes de buscar"/>
-                        <button style={buttonStyle} type={'submit'}/>
-                    </div>
+                    <input
+                        value={this.state.searchQuery}
+                        type="text"
+                        onChange={this.changeHandler}
+                        placeholder="Nunca dejes de buscar"/>
+                    <button type={'submit'}>
+                        <div id="">
+                            <img src={searchIcon}/>
+                        </div>
+
+                    </button>
                 </form>
             </div>
         );

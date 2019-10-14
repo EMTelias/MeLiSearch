@@ -1,10 +1,10 @@
 import React from 'react';
 import {Container} from "react-bootstrap";
-import ProductCategories from "./ProductCategories";
 import ProductDetails from "./ProductDetails";
 import ProductDescription from "./ProductDescription";
 import {API_ENDPOINT} from "../../config/config"
-import "../../styles/productDetails.css"
+import "../../styles/product/productDetails.css"
+import Breadcrumb from "../Breadcrumb/Breadcrumb";
 
 export class Product extends React.Component {
 
@@ -47,11 +47,10 @@ export class Product extends React.Component {
     }
     else if (isFetching){
         return <div><p> Loading...</p> </div>
-
     }
-        return (
+    return (
             <div>
-                <ProductCategories productCategories={"Nuevo > Iphone > Lie > Not an iphone"}/>
+                <Breadcrumb productCategoriesArray={product.categories}/>
                 <Container className={"product-container"}>
                     <div className={"details-container"}>
                         <ProductDescription itemPicture={product.picture} productDescription={product.description} />

@@ -11,34 +11,39 @@ router.get('/:itemId', async (req, res) => {
     const productDetails = await meliClient.getProductDetails(itemId);
     const productCategoriesFromCategoryId = await meliClient.getProductCategories(productDetails.category_id);
 
-    const productCategories = helper.getCategoriesPathFromRootArray(productCategoriesFromCategoryId);
-    const productDescription = await meliClient.getProductDescription(itemId);
+    try {
+        const productCategories = helper.getCategoriesPathFromRootArray(productCategoriesFromCategoryId);
+        const productDescription = await meliClient.getProductDescription(itemId);
 
-    const price = Math.trunc(productDetails.price);
-    const decimal = Number((productDetails.price-price).toFixed(2));
+        const price = Math.trunc(productDetails.price);
+        const decimal = Number((productDetails.price - price).toFixed(2));
 
-    const responseData = {
-        author: {
-            name: config.AUTHOR_NAME,
-            lastName: config.AUTHOR_LASTNAME,
-        },
-        item: {
-            id: productDetails.id,
-            title: productDetails.title,
-            price: {
-                currency: productDetails.currency_id,
-                amount: price,
-                decimals: decimal,
+        const responseData = {
+            author: {
+                name: config.AUTHOR_NAME,
+                lastName: config.AUTHOR_LASTNAME,
             },
-            categories: productCategories,
-            picture: productDetails.pictures && productDetails.pictures[0] ? productDetails.pictures[0].url : null,
-            condition: productDetails.condition,
-            free_shipping: productDetails.shipping.free_shipping,
-            sold_quantity: productDetails.sold_quantity,
-            description: productDescription.plain_text
-        }
-    };
-    res.json(responseData)
+            item: {
+                id: productDetails.id,
+                title: productDetails.title,
+                price: {
+                    currency: productDetails.currency_id,
+                    amount: price,
+                    decimals: decimal,
+                },
+                categories: productCategories,
+                picture: productDetails.pictures && productDetails.pictures[0] ? productDetails.pictures[0].url : null,
+                condition: productDetails.condition,
+                free_shipping: productDetails.shipping.free_shipping,
+                sold_quantity: productDetails.sold_quantity,
+                description: productDescription.plain_text
+            }
+        };
+        res.json(responseData)
+    }
+    catch (e) {
+        res.json({error: e.message});
+    }
 });
 
 
@@ -47,17 +52,17 @@ router.get('/', async (req, res) => {
     const meliClient = new MeLiClient().getInstance();
 
     const productsFromSearch = await meliClient.getProductListFromQuerySearch(q);
+    try {
+        const categoryFilter = productsFromSearch.filters.find((item) => item.id === "category");
+        let mainCategoriesFromSearch = [];
+        if (categoryFilter.values.length > 0) {
+            mainCategoriesFromSearch = helper.getCategoriesPathFromRootArray(categoryFilter.values[0]);
+        }
 
-    const categoryFilter = productsFromSearch.filters.find((item) => item.id === "category");
-    let mainCategoriesFromSearch =  [];
-    if (categoryFilter.values.length > 0){
-        mainCategoriesFromSearch = helper.getCategoriesPathFromRootArray(categoryFilter.values[0]);
-    }
-
-    let productList = productsFromSearch.results.map( (product) => {
-        const price = Math.trunc(product.price);
-        const decimal = Number((product.price-price).toFixed(2));
-        return {
+        let productList = productsFromSearch.results.map((product) => {
+            const price = Math.trunc(product.price);
+            const decimal = Number((product.price - price).toFixed(2));
+            return {
                 id: product.id,
                 title: product.title,
                 price: {
@@ -70,19 +75,22 @@ router.get('/', async (req, res) => {
                 free_shipping: product.shipping.free_shipping,
                 sold_quantity: product.sold_quantity,
                 description: product.plain_text
+            };
+        });
+
+        const response = {
+            author: {
+                name: config.AUTHOR_NAME,
+                lastName: config.AUTHOR_LASTNAME,
+            },
+            categories: mainCategoriesFromSearch,
+            items: productList
         };
-    });
 
-    const response = {
-        author: {
-            name: config.AUTHOR_NAME,
-            lastName: config.AUTHOR_LASTNAME,
-        },
-        categories: mainCategoriesFromSearch,
-        items : productList
-    };
-
-    res.json(response);
+        res.json(response);
+    }catch (e) {
+        res.json({error: e.message});
+    }
 });
 
 module.exports = router;

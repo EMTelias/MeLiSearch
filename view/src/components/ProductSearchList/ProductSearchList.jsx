@@ -28,7 +28,8 @@ export class ProductSearchList extends React.Component {
                 this.setState({
                     isFetching: false,
                     items: response.items,
-                    categories: response.categories
+                    categories: response.categories,
+                    error: response.error
                 });
             });
     }
@@ -52,8 +53,9 @@ export class ProductSearchList extends React.Component {
 
     render() {
         const {isFetching, items, error, categories} = this.state;
+        console.log(error);
         if (error) {
-            return <p>{error.message}</p>;
+            return <p>{"ERROR PAGE"}</p>;
         }
         else if (isFetching){
             return <div ><p> Loading...</p> </div>

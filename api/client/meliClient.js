@@ -34,7 +34,6 @@ class MeLiClient {
             uri: `${this.categoriesEndpoint}/${categoryId}`,
             method: "GET"
         };
-        console.log(categoryId);
         return rp(options)
             .then((responseData) => JSON.parse(responseData))
             .catch((error) =>  error );

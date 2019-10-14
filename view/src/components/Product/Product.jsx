@@ -22,42 +22,45 @@ export class Product extends React.Component {
             .then(res => {
                 return res.json();
             })
-            .then(item => {
+            .then(response => {
                 this.setState({
                     isFetching: false,
-                    item: item
+                    error: response.error,
+                    item: response
                 });
             });
     }
+
     componentDidMount() {
         const { params } = this.props.match;
         this.getItemDetailsFromAPI(params.itemId);
     }
-     componentWillMount = () => {
+
+    componentWillMount = () => {
          this.setState({
              isFetching: true
          });
      };
 
     render() {
-    const {isFetching, item, error} = this.state;
-    const product = item.item;
-    if (error) {
-            return <p>{error.message}</p>;
-    }
-    else if (isFetching){
-        return <div><p> Loading...</p> </div>
-    }
-    return (
-            <div>
-                <Breadcrumb productCategoriesArray={product.categories}/>
-                <Container className={"product-container"}>
-                    <div className={"details-container"}>
-                        <ProductDescription itemPicture={product.picture} productDescription={product.description} />
-                        <ProductDetails itemState={product.condition} itemsSold={product.sold_quantity} itemName={product.title} itemPrice={product.price.amount} />
-                    </div>
-                </Container>
-            </div>
-        );
-    }
-};
+        const {isFetching, item, error} = this.state;
+        const product = item.item;
+        if (error) {
+                return <p>{"ERROR PAGE"}</p>;
+        }
+        else if (isFetching){
+            return <div><p> Loading...</p> </div>
+        }
+        return (
+                <div>
+                    <Breadcrumb productCategoriesArray={product.categories}/>
+                    <Container className={"product-container"}>
+                        <div className={"details-container"}>
+                            <ProductDescription itemPicture={product.picture} productDescription={product.description} />
+                            <ProductDetails itemState={product.condition} itemsSold={product.sold_quantity} itemName={product.title} itemPrice={product.price.amount} />
+                        </div>
+                    </Container>
+                </div>
+            );
+        }
+}

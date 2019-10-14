@@ -2,17 +2,12 @@
   "name": "meli-search",
   "version": "1.0.0",
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "main": "./view/index.js",
-  "engines": {
-    "node": "10.15.1"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "cd api && npm run server",
     "view": "cd view && npm run start",
     "start": "node ./view/index.js",
     "dev": "concurrently \"npm run server\" \"npm run start\"",
-    "heroku-postbuild": "npm install --only=dev && npm install && npm run build"
   },
   "repository": {
     "type": "git",

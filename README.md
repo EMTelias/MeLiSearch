@@ -159,13 +159,16 @@ The view uses the endpoint from the API defined on the view/config.js file. This
 `export const API_ENDPOINT = https://API-ENDPOINT.com`
 
 ### API
-The API uses the express framework to handle requests.
+The API uses the ExpressJS framework to handle requests.
 
 The entry point is found on /api/sever.js and it defines the routes and router used. For example:
 
 `app.use('/api/items', itemsRouter);`
 
 To add a new route, you must create a new router and reference it to the url fom this file.
+
+#### Configuration
+**IMPORTANT:** The interaction between the view and the API use an user signature on the api/config/config.json file. Please update this file.
 
 #### Routes
 ##### Items
@@ -247,5 +250,6 @@ A MeLiClient Singleton class is used to make calls to the MeLi endpoints. The ca
 
 
 ### TODO LIST
+- Document SASS watcher
 - Localize strings
 - Implement React.Fragment

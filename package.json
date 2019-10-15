@@ -6,6 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "cd api && npm run server",
     "view": "cd view && npm run start",
+    "prereq": "npm install && cd view && npm install && cd ../api && npm install",
     "dev": "concurrently \"npm run server\" \"npm run view\""
   },
   "repository": {

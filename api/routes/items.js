@@ -25,8 +25,8 @@ router.get('/:itemId', async (req, res) => {
 
         const responseData = {
             author: {
-                name: config.AUTHOR_NAME,
-                lastName: config.AUTHOR_LASTNAME,
+                name: config.author.name,
+                lastName: config.author.lastname,
             },
             item: {
                 id: productDetails.id,
@@ -92,8 +92,8 @@ router.get('/', async (req, res) => {
 
         const response = {
             author: {
-                name: config.AUTHOR_NAME,
-                lastName: config.AUTHOR_LASTNAME,
+                name: config.author.name,
+                lastName: config.author.lastname,
             },
             categories: mainCategoriesFromSearch,
             items: productList
@@ -101,7 +101,6 @@ router.get('/', async (req, res) => {
 
         res.json(response);
     }catch (e) {
-        console.log(e);
         res.status(500).send( "Internal server error");
     }
 });

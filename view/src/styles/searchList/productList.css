@@ -32,6 +32,7 @@ ul :hover {
   width: 50%;
   margin-top: 36px;
   align-self: baseline;
+  padding-right: 5px;
 }
 
 .product-right {

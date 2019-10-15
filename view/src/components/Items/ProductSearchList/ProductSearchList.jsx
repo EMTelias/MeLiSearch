@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container, Row} from "react-bootstrap";
+import {Container} from "react-bootstrap";
 import ProductItem from "./ProductItem";
 import queryString from "query-string"
 import {API_ENDPOINT} from "../../../config/config";
@@ -25,8 +25,6 @@ export class ProductSearchList extends React.Component {
                 return res.json();
             })
             .then(response => {
-                console.log(response);
-
                 this.setState({
                     isFetching: false,
                     items: response.items,

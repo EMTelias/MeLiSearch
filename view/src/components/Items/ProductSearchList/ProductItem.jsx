@@ -1,5 +1,4 @@
 import React from 'react';
-import PriceItem from "../Product/PriceItem";
 import Helper from "../../../helpers/helpers";
 
 

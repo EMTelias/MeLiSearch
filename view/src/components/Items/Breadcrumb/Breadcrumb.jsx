@@ -6,7 +6,7 @@ const breadcrumbSeparator = ">"
 function Breadcrumb({ productCategoriesArray }){
      return <ul className={"breadcrumb-bar"}>
              {productCategoriesArray.map((category, index) => (
-                 <li>
+                 <li key={index}>
                      <Link key={category} to={`/items?search=${category}`}> {category} </Link>
                      { index !== productCategoriesArray.length - 1 ? breadcrumbSeparator : null}
                  </li>

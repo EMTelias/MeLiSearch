@@ -4,7 +4,7 @@ import ProductDetails from "./ProductDetails";
 import ProductDescription from "./ProductDescription";
 import {API_ENDPOINT} from "../../../config/config"
 import Breadcrumb from "../Breadcrumb/Breadcrumb";
-import NotFound from "../Error/NotFound";
+import NotFound from "../../Error/NotFound";
 import "../../../styles/product/productDetails.css";
 
 export class Product extends React.Component {

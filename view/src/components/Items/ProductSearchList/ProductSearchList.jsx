@@ -5,7 +5,7 @@ import queryString from "query-string"
 import {API_ENDPOINT} from "../../../config/config";
 import {Link} from "react-router-dom";
 import Breadcrumb from "../Breadcrumb/Breadcrumb";
-import NotFound from "../Error/NotFound";
+import NotFound from "../../Error/NotFound";
 import "../../../styles/searchList/productList.css";import "../../../styles/searchList/productList.css";
 
 export class ProductSearchList extends React.Component {

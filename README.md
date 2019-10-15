@@ -15,7 +15,7 @@ You will also see any lint errors in the console.
 
 ## Documentation
 
-![GitHub Logo](readme/page-view.png)
+![page-view](readme/page-view.PNG)
 
 This project is separated on three different views
 

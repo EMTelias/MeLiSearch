@@ -14,8 +14,10 @@ The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
 ## Documentation
+<table><tr><td>
 
 ![page-view](readme/page-view.PNG)
+</td></tr></table>
 
 This project is separated on three different views:
 
@@ -46,9 +48,12 @@ which component it should use.
 ### Components
 ### Search bar
 This view is composed from a SearchBar that uses a SearchBox
-![search-bar](readme/search-bar.PNG)
+<table><tr><td>
 
-####SearchBox
+![search-bar](readme/search-bar.PNG)
+</td></tr></table>
+
+#### SearchBox
 This component builds the following state on creation:
 
 `
@@ -120,21 +125,27 @@ The `error` state allows to stop the rendering and show a custom error page.
 
 #### Product Details
 This stateless component renders the following view with the data obtained from the API.
+<table><tr><td>
 
 ![product-detail](readme/product-detail.PNG)
+</td></tr></table>
 
 The price is also rendered from the stateless component PriceItem 
 
 #### Product Description
 This stateless component renders the following view with the data obtained from the API.
+<table><tr><td>
 
 ![product-description](readme/product-description.PNG)
+</td></tr></table>
 
 ### Shared components
 #### Breadcrumb
 This stateless component renders the following view with the data obtained from the API.
+<table><tr><td>
 
 ![breadcrumb](readme/breadcrumb.PNG)
+</td></tr></table>
 
 The previous view was built from an array of strings.
 

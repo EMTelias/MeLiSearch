@@ -14,8 +14,9 @@ export class ProductSearchList extends React.Component {
         super(props);
         this.state = {
             isFetching: true,
-            error: null,
             items: [],
+            categories: [],
+            error: null
         };
     }
 
@@ -53,6 +54,7 @@ export class ProductSearchList extends React.Component {
 
     render() {
         const {isFetching, items, error, categories} = this.state;
+
         if (error) {
             return <NotFound notFoundMessage={"No hay publicaciones que coincidan con tu búsqueda."}/>
         }

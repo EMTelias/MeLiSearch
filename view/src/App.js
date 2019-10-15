@@ -6,7 +6,6 @@ import {Product} from "./components/Items/Product/Product";
 import {SearchBar} from "./components/SearchBar/SearchBar";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
 function App() {
   return (
       <div className="App">

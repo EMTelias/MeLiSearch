@@ -4,9 +4,6 @@ import "../../styles/header/searchBox.css";
 import meliBrand from '../../img/meli-brand.png' // relative path to image
 
 export class SearchBar extends React.Component {
-    componentWillMount = () => {
-    };
-
     render() {
         return (
             <div className={"nav-search-bar"}>

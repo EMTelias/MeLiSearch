@@ -45,7 +45,6 @@ export class SearchBox extends React.Component {
                         <div id="">
                             <img src={searchIcon}/>
                         </div>
-
                     </button>
                 </form>
             </div>

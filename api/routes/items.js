@@ -23,24 +23,25 @@ router.get('/:itemId', async (req, res) => {
 
         const price = helper.getPriceWithDecimalsObject(productDetails.price);
 
+        const {id, title, currency_id, pictures, condition, shipping, sold_quantity} = productDetails;
         const responseData = {
             author: {
                 name: config.author.name,
                 lastName: config.author.lastname,
             },
             item: {
-                id: productDetails.id,
-                title: productDetails.title,
+                id: id,
+                title: title,
                 price: {
-                    currency: productDetails.currency_id,
+                    currency: currency_id,
                     amount: price.amount,
                     decimals: price.decimals,
                 },
                 categories: productCategories,
-                picture: productDetails.pictures && productDetails.pictures[0] ? productDetails.pictures[0].url : null,
-                condition: productDetails.condition,
-                free_shipping: productDetails.shipping.free_shipping,
-                sold_quantity: productDetails.sold_quantity,
+                picture: pictures && pictures[0] ? pictures[0].url : null,
+                condition: condition,
+                free_shipping: shipping.free_shipping,
+                sold_quantity: sold_quantity,
                 description: productDescription.plain_text,
             }
         };

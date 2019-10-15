@@ -8,7 +8,7 @@ function Breadcrumb({ productCategoriesArray }){
              {productCategoriesArray.map((category, index) => (
                  <li>
                      <Link key={category} to={`/items?search=${category}`}> {category} </Link>
-                     { index !== productCategoriesArray.length-1 ? breadcrumbSeparator : null}
+                     { index !== productCategoriesArray.length - 1 ? breadcrumbSeparator : null}
                  </li>
                  ))}
             </ul>

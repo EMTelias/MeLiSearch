@@ -4,7 +4,7 @@ In the project directory run the following line to install the project dependenc
 
 `npm run prereq`
 
-To run the project add the following line
+To run the project run the following line
 
 `npm run start`
 
@@ -169,7 +169,8 @@ To add a new route, you must create a new router and reference it to the url fom
 ##### Items
 The items route understand two calls:
 
-router.get('/:itemId'):
+
+###### router.get('/:itemId'):
 
 Receives an item Id an retrieves the Product Data from the MeLi Items endpoint 
 
@@ -198,7 +199,9 @@ Returns the following structure if code status is 200.
     }
 }
 ````
-router.get('/'):
+<br>
+
+###### router.get('/'):
   
 Receives a query strinng from the URl and retrieves the list of Product Data 
 from the MeLi Items endpoint
@@ -238,3 +241,9 @@ A MeLiClient Singleton class is used to make calls to the MeLi endpoints. The ca
 - getProductDescription(itemId)
 - getProductCategories(categoryId)
 - getProductListFromQuerySearch(queryString)
+
+
+
+### TODO LIST
+- Localize strings
+- Implement React.Fragment

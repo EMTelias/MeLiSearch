@@ -185,16 +185,16 @@ Returns the following structure if code status is 200.
         
         "title": String,
         "price": {
-        "currency": String,
-        "amount": Number,
-        "decimals": Number,
+            "currency": String,
+            "amount": Number,
+            "decimals": Number,
         },
         “picture”: String,
         "condition": String,
         "free_shipping": Boolean,
         "sold_quantity", Number
         "description": String
-        "categories": [String]
+        categories: [String, String, String, ...],
     }
 }
 ````
@@ -206,26 +206,29 @@ from the MeLi Items endpoint
 Returns the following structure if code status is 200.
  ````
  {
-     “author”: {
-     “name”: String
-     “lastname”: String
-     },
-     “item”: {
-         "id": String,
-         
-         "title": String,
-         "price": {
-         "currency": String,
-         "amount": Number,
-         "decimals": Number,
-         },
-         “picture”: String,
-         "condition": String,
-         "free_shipping": Boolean,
-         "sold_quantity", Number
-         "description": String
-         "categories": [String]
-     }
+    “author”: {
+        “name”: String
+        “lastname”: String
+    },
+    categories: [String, String, String, ...],
+    items: [
+        {
+        "id": String,
+        "title": String,
+        "price": {
+            "currency": String,
+            "amount": Number,
+            "decimals": Number
+        },
+        “picture”: String,
+        "condition": String,
+        "free_shipping": Boolean
+    },
+    {...},
+    {...},
+    {...}
+    ]
+    }
  }
  ````
 

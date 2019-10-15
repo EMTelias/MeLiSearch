@@ -19,9 +19,9 @@ You will also see any lint errors in the console.
 ![page-view](readme/page-view.PNG)
 </td></tr></table>
 
-This project implement a server on ExpressJS and a view in ReactJS.
+This project implements a server on ExpressJS and a view in ReactJS.
 
-This separated on three main views:
+This View is separated on three main Components:
 
 - Search Bar
 - Product Search List

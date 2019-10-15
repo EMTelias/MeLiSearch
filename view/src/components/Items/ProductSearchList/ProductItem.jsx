@@ -7,7 +7,7 @@ function ProductItem({productPrice, productName, productImg,  productSeller}) {
    return <div >
                 <div className={"product-row"}>
                     <div className={"product-column product-left"}>
-                        <img src={productImg}/>
+                        <img alt={"product-img"} src={productImg}/>
                     </div>
                     <div className={"product-column product-center"}>
                         <h4>$ {Helper.formatPrice(productPrice)}</h4>

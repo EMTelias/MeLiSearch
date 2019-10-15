@@ -10,7 +10,7 @@ export class SearchBar extends React.Component {
                 <div className={"nav-container"}>
                     <div className={"nav-brand"}>
                         <a href={"/"}>
-                            <img src={meliBrand} className=""/>
+                            <img alt={"brand-img"} src={meliBrand} className=""/>
                         </a>
                     </div>
                     <SearchBox/>

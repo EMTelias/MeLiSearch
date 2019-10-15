@@ -40,11 +40,11 @@ export class SearchBox extends React.Component {
                         value={this.state.searchQuery}
                         type="text"
                         onChange={this.changeHandler}
-                        placeholder="Nunca dejes de buscar"/>
-                    <button type={'submit'}>
-                        <div id="">
-                            <img src={searchIcon}/>
-                        </div>
+                        placeholder="Nunca dejes de buscar"
+                        alt={"search-input"}
+                        />
+                    <button  aria-label="Search" type={'submit'}>
+                        <img alt="SearchIcon" src={searchIcon}/>
                     </button>
                 </form>
             </div>

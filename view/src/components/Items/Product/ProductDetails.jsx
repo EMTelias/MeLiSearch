@@ -10,7 +10,7 @@ function ProductDetails({itemState, itemsSold, itemName, itemPrice}) {
                     <h1 className={"item-title"}>{itemName}</h1>
                 </header>
                 <PriceItem productAmount={itemPrice.amount} productDecimals={ itemPrice.decimals }/>
-                <button variant="primary">Comprar</button>
+                <button aria-label="Buy" variant="primary">Comprar</button>
             </section>
 }
 

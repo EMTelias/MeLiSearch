@@ -6,7 +6,7 @@ In the project directory run the following line to install the project dependenc
 
 To run the project run the following line
 
-`npm run start`
+`npm run dev`
 
 This will start an instance of the app on [http://localhost:3000](http://localhost:3000).<br />
 

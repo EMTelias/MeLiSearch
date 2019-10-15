@@ -18,7 +18,7 @@
     "react-scripts": "3.2.0"
   },
   "scripts": {
-    "start": "node_modules/.bin/react-scripts start",
+    "start": "set HTTPS=true && react-scripts start",
     "build": "node_modules/.bin/react-scripts build",
     "test": "node_modules/.bin/react-scripts test",
     "eject": "node_modules/.bin/react-scripts eject",

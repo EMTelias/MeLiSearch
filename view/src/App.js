@@ -11,12 +11,12 @@ function App() {
       <div className="App">
           <Router>
               <SearchBar/>
-          <Switch>
-              <div >
-                <Route exact path="/items/:itemId" component={Product}/>
-                <Route exact path="/items" component={ProductSearchList}/>
-              </div>
-          </Switch>
+              <Switch>
+                  <div >
+                    <Route exact path="/items/:itemId" component={Product}/>
+                    <Route exact path="/items" component={ProductSearchList}/>
+                  </div>
+              </Switch>
         </Router>
       </div>
   );

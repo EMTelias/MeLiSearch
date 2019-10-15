@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 function ProductDescription({ itemPicture, productDescription }) {
      return  <div className={"details-left"}>
                  <div className={"details-img"}>
